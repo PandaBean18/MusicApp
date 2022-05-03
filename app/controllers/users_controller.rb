@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             self.log_user_in!(@user)
-            render :show
+            redirect_to bands_url
         else
             flash.now[:errors] = @user.errors.full_messages[0]
             render :new
