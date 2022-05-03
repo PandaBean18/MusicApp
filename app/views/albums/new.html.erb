@@ -1,0 +1,45 @@
+<% content_for :header do %>
+    <header class="form_header">
+        <h1>Create a new album!</h1>
+    </header>
+<% end %>
+<form class="form" action="<%= albums_url %>" method="post">
+
+    <%= auth_token %>
+
+    <input type="hidden" name="album[band_id]" value="<%= flash[:band_id] %>">
+
+    <input type="text" name="album[title]" value="<%= @album && @album.title ? @album.title : '' %>" placeholder="Album Title">
+
+    <br>
+
+    <input type="number" name="album[year]" value="<%= @album && @album.year ? @album.year : Date.today.year %>" placeholder="Album Release Year" min="1000" max="9999">
+
+    <br>
+
+    <p>Album type:</p>
+    <input id="live_album" type="radio" name="album[live_album]" value="true" <%= @album && @album.live_album ? 'checked' : '' %>>
+    <label for="live_album">Live Album</label>
+
+    <br>
+
+    <input id="studio_album" type="radio" name="album[live_album]" value="false" <%= @album && @album.live_album.nil? ? '' : 'checked' %>>
+    <label for="studio_album">Studio Album</label>
+
+    <br>
+
+    <input type="submit" value="Create album">
+
+
+</form>
+
+<div class="form_home">
+    <%= link_to 'Go to home.', bands_url %>
+</div>
+
+<% if flash.now[:errors] %>
+    <br>
+    <div class="errors">
+        <p><%= flash.now[:errors] %></p>
+    </div>
+<% end %>

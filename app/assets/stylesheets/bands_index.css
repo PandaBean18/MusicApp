@@ -1,0 +1,37 @@
+/*.bands_container {
+    width: 500px;
+    margin: auto;
+}*/
+
+.band_container {
+    width: 300px;
+    margin: auto;
+    float: left;
+    border-radius: 12px;
+    color: #edf5e1;
+    background-color: #05386b;
+    margin: 20px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.band_container a {
+    display: block;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.band_container:hover {
+    background-color: #edf5e1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.band_container:hover a {
+  color: #05386b;
+}
+
+#bands_h1 {
+    text-align: center;
+}

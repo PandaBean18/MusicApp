@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+        <% if yield(:header).length == 0 %>
+            <header class="header">
+              <div class="home">
+                <%= link_to 'Home', bands_url %>
+              </div>
+
+              <div class="user_info">
+                  <% if current_user %>
+                      <p><%= current_user.email %></p>
+                      <%= button_to 'Log out', session_url, method: 'delete' %>
+                  <% else %>
+                      <%= button_to 'Log in', new_session_url, method: 'get' %>
+                  <% end %>
+              </div>
+            </header>
+        <% else %>
+                <%= yield :header %>
+        <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<% content_for :header do %>
+    <header class="form_header">
+        <h1>Add a new track!</h1>
+    </header>
+<% end %>
+<form class="form" action="<%= track_url %>" method="post">
+
+    <%= auth_token %>
+
+    <input type="hidden" name="_method" value="patch">
+
+    <input type="text" name="track[title]" value="<%= @track && @track.title ? @track.title : '' %>" placeholder="Title">
+
+    <br>
+
+    <input type="number" name="track[ord]" value="<%= @track && @track.ord ? @track.ord : '' %>" placeholder="Ord">
+
+    <br>
+
+    <p>Track type:</p>
+    <input id="bonus_track" type="radio" name="track[bonus_track]" value="true" <%= @track && @track.bonus_track ? 'checked' : '' %>>
+    <label for="bonus_track">Bonus Track</label>
+
+    <br>
+
+    <input id="regular_track" type="radio" name="track[bonus_track]" value="false" <%= @track && @track.bonus_track.nil? ? 'checked' : '' %>>
+    <label for="regular_track">Regular Track</label>
+
+    <br>
+
+    <% if @track.lyrics %>
+      <textarea name="track[lyrics]" rows="8" cols="80" placeholder="Lyrics (Optional)"><%= @track.lyrics %></textarea>
+    <% else %>
+      <textarea name="track[lyrics]" rows="8" cols="80" placeholder="Lyrics (Optional)"></textarea>
+    <% end %>
+
+    <br>
+
+    <input type="submit" value="Update Track">
+
+
+</form>
+
+<div class="form_home">
+    <%= link_to 'Go to home.', bands_url %>
+</div>
+
+<% if flash.now[:errors] %>
+    <br>
+    <div class="errors">
+        <p><%= flash.now[:errors] %></p>
+    </div>
+<% end %>

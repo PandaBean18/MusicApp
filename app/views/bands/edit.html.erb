@@ -1,0 +1,31 @@
+<% content_for :header do %>
+    <header class="form_header">
+        <h1>Edit band!</h1>
+    </header>
+<% end %>
+<form class="form" action="<%= band_url %>" method="post">
+
+  <input type="hidden" name="_method" value="patch">
+
+  <input type="hidden" name="band[id]" value="<%= @band.id %>">
+
+  <%= auth_token %>
+
+  <input type="text" name="band[name]" placeholder="New Band name" value="<%= @band.name ? @band.name : '' %>">
+
+  <br>
+
+  <input type="submit" value="Edit Band">
+
+</form>
+
+<div class="form_home">
+    <%= link_to 'Go to home.', bands_url %>
+</div>
+
+<% if flash.now[:errors] %>
+    <br>
+    <div class="errors">
+        <p><%= flash.now[:errors] %></p>
+    </div>
+<% end %>

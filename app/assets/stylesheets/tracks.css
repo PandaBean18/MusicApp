@@ -1,0 +1,63 @@
+.tracks_container {
+  width: 500px;
+  margin: auto;
+}
+
+.track_container {
+  width: 400px;
+  margin: auto;
+  padding: 10px;
+  background-color: #05386b;
+  color: #edf5e1;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.track_container h1 {
+  text-align: center;
+  margin: 0px;
+}
+
+.new_track {
+  width: 400px;
+  margin: auto;
+  background-color: #05386b;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.new_track a {
+  display: block;
+  color: #edf5e1;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.track_container a {
+  display: block;
+  color: #edf5e1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.track_container:hover {
+  background-color: #edf5e1;
+  color: #05386b;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.track_container:hover a {
+  color: #05386b;
+}
+
+.new_track:hover {
+  background-color: #edf5e1;
+  color: #05386b;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.new_track:hover a {
+  color: #05386b;
+}

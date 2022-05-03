@@ -1,0 +1,27 @@
+.new {
+    width: 310px;
+    margin: auto;
+    background-color: #05386b;
+    color: #edf5e1;
+    border-radius: 12px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.new a {
+    display: block;
+    text-align: center;
+    color: inherit;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.new:hover {
+    background-color: #edf5e1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.new:hover a {
+    color: #05386b;
+}

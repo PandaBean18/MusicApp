@@ -1,0 +1,33 @@
+<% content_for :header do %>
+    <header class="form_header">
+        <h1>Create a new user!</h1>
+    </header>
+<% end %>
+<form class="form" action="<%= users_url %>" method="post">
+  <%= auth_token %>
+
+  <input id="user_email" type="text" name="user[email]" placeholder="Email" value="<%= @user && @user.email ? @user.email : '' %>">
+
+  <br>
+
+  <input id="user_password" type="text" name="user[password]"  placeholder="Password" value="<%= @user && @user.password ? @user.password : '' %>">
+
+  <br>
+
+  <input type="submit" value="Create a new user">
+</form>
+
+<div class="login">
+    <%= link_to 'Existing user? Log in!', new_session_url %>
+</div>
+
+<div class="form_home">
+    <%= link_to 'Go to home.', bands_url %>
+</div>
+
+<% if flash.now[:errors] %>
+    <br>
+    <div class="errors">
+        <p><%= flash.now[:errors] %></p>
+    </div>
+<% end %>

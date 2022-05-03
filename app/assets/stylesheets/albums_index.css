@@ -1,0 +1,59 @@
+.albums_container {
+  width: 90%;
+  margin: auto;
+}
+
+.album_container {
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+  background-color: #05386b;
+  color: #edf5e1;
+  border-radius: 12px;
+}
+
+.album_container h2 {
+  margin: 0px;
+  text-align: center;
+}
+
+.album_container a {
+  color: #edf5e1;
+  text-decoration: none;
+}
+
+.album_container:hover {
+  background-color: #edf5e1;
+  color: #05386b;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.album_container:hover a {
+  color: #05386b;
+}
+
+.new_album {
+  width: 300px;
+  margin: auto;
+  background-color: #05386b;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.new_album a {
+  color: inherit;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.new_album:hover {
+  background-color: #edf5e1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.new_album:hover a {
+    color: #05386b;
+}

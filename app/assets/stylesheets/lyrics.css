@@ -1,0 +1,50 @@
+.lyrics {
+  width: 400px;
+  float: left;
+}
+
+.lyrics p {
+  margin: 0px;
+  text-align: center;
+  color: #05386b;
+}
+
+.track p {
+  margin: 0px;
+  color: #05386b;
+}
+
+.track h2 {
+  margin: 0px;
+}
+
+
+.notes textarea {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #edf5e1;
+}
+
+.notes input[type="submit"] {
+  border-radius: 12px;
+  border: none;
+  color: #edf5e1;
+  background-color: #05386b;
+  width: 100px;
+  height: 40px;
+}
+
+.notes input[type="submit"]:hover {
+  cursor: pointer;
+  color: #05386b;
+  background-color: #edf5e1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.track {
+  width: 900px;
+  margin: auto;
+  color: #05386b;
+  display: flex;
+  justify-content: space-between;
+}

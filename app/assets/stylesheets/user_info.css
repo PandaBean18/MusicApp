@@ -1,0 +1,5 @@
+.user_info {
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+}

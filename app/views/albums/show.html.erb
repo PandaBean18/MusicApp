@@ -1,0 +1,28 @@
+<div class="album_show">
+  <h1><%= @album.title %></h1>
+  <p>Made by: <%= @album.band.name %></p>
+  <p>Album type: <%= @album.live_album ? 'Live' : 'Studio' %></p>
+</div>
+
+<div class="tracks_container">
+  <% @album.tracks.each do |track| %>
+    <div class="track_container">
+      <a href="<%= "/bands/#{@album.band.id}/albums/#{@album.id}/tracks/#{track.id}" %>"><h1><%= track.title.titleize %></h1></a>
+    </div>
+  <% end %>
+
+  <% if current_user.id == @album.band.user_id %>
+    <div class="new_track">
+      <%= link_to 'Add new track', "/bands/#{@album.band.id}/albums/#{@album.id}/tracks/new" %>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<% if current_user && current_user.id == @album.band.user_id %>
+  <div class="creator_options">
+      <%= button_to 'Delete Album', album_url, method: 'delete' %>
+      <%= button_to 'Edit Album', edit_band_album_url, method: 'get' %>
+  </div>
+<% end %>

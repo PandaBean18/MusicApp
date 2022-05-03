@@ -1,0 +1,33 @@
+<% content_for :header do %>
+    <header class="form_header">
+        <h1>Log in</h1>
+    </header>
+<% end %>
+<form class="form" action="<%= session_url %>" method="post">
+  <%= auth_token %>
+
+  <input id="user_email" type="text" name="user[email]" placeholder="Email">
+
+  <br>
+
+  <input id="user_password" type="password" name="user[password]" placeholder="Password">
+
+  <br>
+
+  <input type="submit" value="Log in">
+</form>
+
+<div class="sign_up">
+    <%= link_to 'New user? Sign up!', new_user_url %>
+</div>
+
+<div class="form_home">
+    <%= link_to 'Go to home.', bands_url %>
+</div>
+
+<% if flash.now[:errors] %>
+    <br>
+    <div class="errors">
+        <p><%= flash.now[:errors] %></p>
+    </div>
+<% end %>

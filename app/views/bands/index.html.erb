@@ -1,0 +1,16 @@
+<h1 id="bands_h1">Bands</h1>
+<div class="bands_container" style="height:<%= 116 * ((Band.all.length + 1) / 2) %>px; width:700px; margin:auto;">
+  <% Band.all.each do |band| %>
+    <div class="band_container">
+      <%= link_to "#{band.name}", band_url(band) %>
+    </div>
+  <% end %>
+</div>
+
+<div class="new">
+  <% if current_user %>
+    <%= link_to '+ Add Band', new_band_url %>
+  <% else %>
+    <%= link_to 'Log in to add a band', new_session_url %>
+  <% end %>
+</div>

@@ -1,0 +1,54 @@
+.form {
+    margin: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.form input {
+    border-radius: 12px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #edf5e1;;
+    background-color: #edf5e1;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sign_up, .login {
+    width: 250px;
+    margin: auto;
+}
+
+.sign_up a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form input[type=submit]:hover {
+    cursor: pointer;
+}
+
+.form_home {
+    color: #05386b;
+    width: 250px;
+    margin: auto;
+}
+
+.form_home a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form textarea {
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #edf5e1;
+}

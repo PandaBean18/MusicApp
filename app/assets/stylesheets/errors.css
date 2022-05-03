@@ -1,0 +1,9 @@
+.errors {
+    border: 2px solid red;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    margin: auto;
+    background-color: #edf5e1;
+    color: #05386b;
+}

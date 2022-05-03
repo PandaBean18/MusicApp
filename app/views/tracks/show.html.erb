@@ -1,0 +1,45 @@
+<h1 style="margin-left: 75px"><%= @track.title %></h1>
+
+<div class="track">
+  <div class="lyrics">
+    <% @track.lyrics.split("\n").each do |sentence| %>
+      <p>&#9835 <%= sentence %></p>
+    <% end %>
+  </div>
+
+  <div class="notes">
+    <form class="notes_form" action="<%= notes_url %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="note[track_id]" value="<%= @track.id %>">
+      <textarea name="note[note]" rows="8" cols="40" placeholder="Add Note"></textarea>
+      <br>
+      <input type="submit" value="Add note">
+    </form>
+
+    <br>
+    <h2>Notes: </h2>
+    <br>
+    <% @track.notes.each do |note| %>
+      <p><%= note.note %></p>
+      <p>Author: <%= note.user.email %></p>
+      <% if note.user.id == current_user.id %>
+        <form class="destroy_note" action="<%= note_url %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="note[id]" value="<%= note.id %>">
+          <%= auth_token %>
+
+          <input type="submit" value="Delete note">
+        </form>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
+
+</div>
+
+<% if @track.album.band.user_id == current_user.id %>
+  <div class="creator_options">
+      <%= button_to 'Delete Track', track_url, method: 'delete' %>
+      <%= button_to 'Edit Album', edit_band_album_track_url, method: 'get' %>
+  </div>
+<% end %>

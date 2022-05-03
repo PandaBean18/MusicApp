@@ -1,0 +1,25 @@
+<h1 style="display: block; text-align: center;"><%= @band.name %></h1>
+
+<div class="albums_container">
+    <% @band.albums.each do |album| %>
+      <div class="album_container">
+        <a href="<%= "/bands/#{@band.id}/albums/#{album.id}" %>">
+          <h2>Title: <%= album.title %></h2>
+          <h2>Release year: <%= album.year %></h2>
+        </a>
+      </div>
+      <br>
+    <% end %>
+    <% if current_user.id == @band.user_id %>
+      <div class="new_album">
+        <%= link_to 'Add a new album', new_band_album_url(@band) %>
+      </div>
+    <% end %>
+</div>
+
+<% if current_user && current_user.id == @band.user_id %>
+  <div class="creator_options">
+      <%= button_to 'Delete Band', band_url, method: 'delete' %>
+      <%= button_to 'Edit Band', edit_band_url, method: 'get' %>
+  </div>
+<% end %>

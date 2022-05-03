@@ -1,0 +1,29 @@
+.creator_options {
+    width: 500px;
+    height: 100px;
+    margin: auto;
+}
+
+.creator_options form {
+    float: left;
+}
+
+.creator_options input[type="submit"] {
+    width: 200px;
+    margin: auto;
+    border-radius: 12px;
+    border: transparent;
+    color: #edf5e1;
+    background-color: #05386b;
+    margin: 20px;
+    padding: 5px;
+    font-size: 32px;
+    font-family: 'Square Peg', cursive;
+}
+
+.creator_options input[type="submit"]:hover {
+    color: #05386b;
+    background-color: #edf5e1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}

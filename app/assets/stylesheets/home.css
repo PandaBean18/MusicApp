@@ -1,0 +1,10 @@
+.home {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.home a {
+    color: #edf5e1;
+    text-decoration: none;
+    font-size: 34px;
+}
