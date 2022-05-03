@@ -15,7 +15,7 @@ class TracksController < ApplicationController
         @track = Track.new(new_track_params)
 
         if @track.save
-            redirect_to "/bands/#{@track.album.band.id}/albums/#{@track.album.id}/tracks/#{@track}"
+            redirect_to "/bands/#{@track.album.band.id}/albums/#{@track.album.id}/tracks/#{@track.id}"
         else
             flash[:album_id] = new_track_params[:album_id]
             flash.now[:errors] = @track.errors.full_messages[0]
